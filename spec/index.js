@@ -1,17 +1,17 @@
-const check = (title, cb) => {
+const check = (title, callback) => {
   try{
-    cb();
-    console.log(`${' PASS '}`);
-  } catch(e) {
-    console.log(`${' FAIL '}`);
-    console.log(e.stack);
+    callback();
+    console.log(`${ title + ' PASS '}`);
+  } catch(error) {
+    console.log(`${title + ' FAIL '}`);
+    console.log(error.stack);
   }
 };
 
-const guarantee = (val) => {
-	if(val) return true;
+const isTrue = (returnValue) => {
+  if (returnValue) return true;
 
 	throw new Error('Assertion failed.')
 };
 
-module.exports = {check, guarantee}
+module.exports = { check, isTrue}
