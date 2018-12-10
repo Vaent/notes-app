@@ -1,6 +1,4 @@
-function abbreviate(string) {
-  return string.slice(0,20);
-}
+const abbreviate = require('../src/abbreviate.js');
 
 function test_abbreviate() {
   var short_string = abbreviate("This is a very long string which is more than 20 characters");
