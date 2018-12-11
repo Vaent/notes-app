@@ -14,4 +14,4 @@ Note.prototype.all = function(){
   return this.notes;
 };
 
-module.exports = Note;
+// module.exports = Note;

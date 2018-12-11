@@ -1,4 +1,4 @@
-const check = (title, callback) => {
+var check = (title, callback) => {
   try{
     callback();
     console.log(`${title + ' PASS'}`);
@@ -8,9 +8,7 @@ const check = (title, callback) => {
   }
 };
 
-const isTrue = (returnValue) => {
+var isTrue = (returnValue) => {
   if (returnValue) return true;
 	throw new Error('Assertion failed.');
 };
-
-module.exports = { check, isTrue }
