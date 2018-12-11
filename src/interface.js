@@ -7,6 +7,7 @@ let create = function() {
   note.create(text);
   console.log(note.all());
   display_notes();
+  document.getElementById('text').value = "";
 }
 
 let display_notes = function() {
