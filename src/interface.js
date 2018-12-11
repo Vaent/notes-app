@@ -17,5 +17,18 @@ let display_notes = function() {
   for (let i = 0; i < displayed.length; i++){
 		html_text.innerHTML += "<a href='#" + i + "'>" + note.abbreviate(displayed[i]) + "</a><br/>";
   };
-
 }
+
+let showNote = function(){
+  getNoteUrl(window.location);
+}
+
+let getNoteUrl = function (location) {
+  console.log(location.hash.split('#')[1]);
+}
+
+function listenToUrl(){
+  window.addEventListener("hashchange", showNote);
+};
+
+listenToUrl();
