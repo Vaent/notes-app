@@ -1,3 +1,8 @@
+const group = (title, callback) => {
+  console.log(`\n⇨ ${title}`);
+  callback();
+};
+
 const check = (title, callback) => {
   try{
     callback();
@@ -14,4 +19,4 @@ const isTrue = (returnValue) => {
 	throw new Error('Assertion failed.')
 };
 
-module.exports = { check, isTrue}
+module.exports = { group, check, isTrue}

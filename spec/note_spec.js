@@ -1,5 +1,5 @@
 const noteClass = require('../src/note.js');
-const { check, isTrue} = require('./index.js')
+const { group, check, isTrue} = require('./index.js')
 
 function testCreate(){
   var note = new noteClass();
@@ -15,10 +15,15 @@ function testAbbreviate() {
   return short_string === "This is a very long ";
 }
 
-check('creates new note', () => {
-  isTrue(testCreate());
+
+group('Note', () => {
+  check('creates new note', () => {
+    isTrue(testCreate());
+  });
+  check('returns abbreviated string', () => {
+    isTrue(testAbbreviate());
+  });
 });
 
-check('returns abbreviated string', () => {
-  isTrue(testAbbreviate());
-});
+
+
