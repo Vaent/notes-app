@@ -1,5 +1,5 @@
 const noteClass = require('../src/note.js');
-const { group, check, isTrue} = require('./index.js')
+const { toBe, instanceOf, group, check, isTrue} = require('./index.js')
 
 function testCreate(){
   var note = new noteClass();
@@ -22,6 +22,14 @@ group('Note', () => {
   });
   check('returns abbreviated string', () => {
     isTrue(testAbbreviate());
+  });
+  check('instanceOf testing', () => {
+    var test_note = new noteClass();
+    instanceOf(test_note, noteClass)
+  });
+  check('toBe testing',() => {
+    var sum = 1 + 1;
+    toBe(sum, 2)
   });
 });
 

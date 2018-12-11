@@ -14,9 +14,24 @@ const check = (title, callback) => {
 };
 
 const isTrue = (returnValue) => {
-  if (returnValue) return true;
-
-	throw new Error('Assertion failed.')
+  if (returnValue){
+  	return true;
+  }
+	throw new Error('Assertion failed.');
 };
 
-module.exports = { group, check, isTrue}
+const instanceOf = (assertion, expectation) => {
+	if (assertion instanceof expectation) {
+		return true;
+	}
+	throw new Error('Assertion failed.');
+};
+
+const toBe = (assertion, expectation) => {
+	if (assertion === expectation){
+		return true;
+	}
+	throw new Error('Assertion failed.');
+};
+
+module.exports = { toBe, instanceOf, group, check, isTrue}
