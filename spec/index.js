@@ -1,4 +1,4 @@
-const group = (title, callback) => {
+const describe = (title, callback) => {
   console.log(`\n⇨ ${title}`);
   callback();
 };
@@ -12,6 +12,8 @@ const check = (title, callback) => {
     console.log(error.stack);
   }
 };
+
+const expect = (exp) => matchers(exp)
 
 const isTrue = (returnValue) => {
   if (returnValue){
@@ -27,11 +29,18 @@ const instanceOf = (assertion, expectation) => {
 	throw new Error('Assertion failed.');
 };
 
-const toBe = (assertion, expectation) => {
-	if (assertion === expectation){
-		return true;
-	}
-	throw new Error('Assertion failed.');
-};
+const it = (msg, fn) => describe('  ' + msg, fn)
 
-module.exports = { toBe, instanceOf, group, check, isTrue}
+const matchers = (exp) => ({
+  toBe: (assertion) => {
+    if (exp === assertion) {
+      console.log('pass')
+      return true
+    } else {
+      console.log('fail')
+      return false
+    }
+  }
+})
+
+module.exports = {expect, matchers, it, instanceOf, describe, check, isTrue}
