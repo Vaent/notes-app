@@ -13,5 +13,3 @@ Note.prototype.abbreviate = function(string){
 Note.prototype.all = function(){
   return this.notes;
 };
-
-// module.exports = Note;
