@@ -13,9 +13,7 @@ const isTrue = (returnValue) => {
 	throw new Error('Assertion failed.');
 };
 
-const expect = (exp) => { return(matchers(exp)) }
-
-const matchers = (exp) => {
+const expect = (exp) => {
   return({
     toTripleEqual: function(assertion) {
       if (exp !== assertion) {
@@ -25,4 +23,4 @@ const matchers = (exp) => {
       }
     }
   });
-};
+}
