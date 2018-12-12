@@ -1,4 +1,4 @@
-var check = (title, callback) => {
+const check = (title, callback) => {
   try{
     callback();
     document.body.innerHTML += `<p>${title} PASS</p>`;
@@ -8,7 +8,21 @@ var check = (title, callback) => {
   }
 };
 
-var isTrue = (returnValue) => {
+const isTrue = (returnValue) => {
   if (returnValue) return true;
 	throw new Error('Assertion failed.');
+};
+
+const expect = (exp) => { return(matchers(exp)) }
+
+const matchers = (exp) => {
+  return({
+    toTripleEqual: function(assertion) {
+      if (exp !== assertion) {
+    	   throw new Error(
+           `(${exp}) and (${assertion}) are not equal value and type.`
+         );
+      }
+    }
+  });
 };
