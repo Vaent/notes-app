@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Test results</title>
+
+    <!-- this script loads the functions used to write tests -->
+    <script type="text/javascript" src="./index.js"></script>
+
+    <!-- add your source files here
+    e.g. <script type="text/javascript" src="../src/note.js"></script> -->
+
+    <!-- add your spec files here
+    e.g. <script type="text/javascript" src="./note_spec.js"></script> -->
+
+    <!-- set up a listener to run the suite after the page is loaded -->
+    <script>
+      document.addEventListener("DOMContentLoaded", runAllTests);
+    </script>
+  </head>
+  <body>
+    <!-- test results will be added to this div as they are obtained -->
+    <div id="results-text"></div>
+  </body>
+</html>
