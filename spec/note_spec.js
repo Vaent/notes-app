@@ -1,14 +1,14 @@
 check('creates new note', function(){
   let note = new Note();
   note.create('test note');
-  isTrue(note.notes[0] === 'test note');
+  expect(note.notes[0]).toTripleEqual('test note');
 });
 
 check('returns abbreviated string', function(){
   let note = new Note();
 	long_string = "This is a very long string which is more than 20 characters";
   var short_string = note.abbreviate(long_string);
-  isTrue(short_string === "This is a very long ");
+  expect(short_string).toTripleEqual("This is a very long ");
 });
 
 check('returns an array of all notes', function(){
