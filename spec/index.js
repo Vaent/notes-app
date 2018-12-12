@@ -1,11 +1,10 @@
 var check = (title, callback) => {
   try{
     callback();
-    document.getElementById('results-text').innerHTML +=
-    `${title + ' PASS<br/>'}`;
+    document.body.innerHTML += `<p>${title} PASS</p>`;
   }catch(error){
-    document.getElementById('results-text').innerHTML +=
-    `${title + ' FAIL<br/>'}` + error.stack;
+    document.body.innerHTML +=
+    `<p>${title} FAIL<br/>${error.stack.split(' at ').join('<br/>')}</p>`;
   }
 };
 
