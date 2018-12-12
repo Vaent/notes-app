@@ -15,12 +15,14 @@ const isTrue = (returnValue) => {
 
 const expect = (exp) => {
   return({
-    toTripleEqual: function(assertion) {
-      if (exp !== assertion) {
-    	   throw new Error(
-           `(${exp}) and (${assertion}) are not equal value and type.`
-         );
-      }
-    }
+    toTripleEqual: function(assertion) {toTripleEqual(exp, assertion)}
   });
+}
+
+const toTripleEqual = (exp, assertion) => {
+  if (exp !== assertion) {
+     throw new Error(
+       `(${exp}) and (${assertion}) are not equal value and type.`
+     );
+  }
 }
